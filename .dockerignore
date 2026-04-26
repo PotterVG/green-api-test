@@ -1,0 +1,12 @@
+.git
+.github
+.gitignore
+.nojekyll
+README.md
+Dockerfile
+.dockerignore
+*.pdf
+*.md
+.idea
+.vscode
+.DS_Store

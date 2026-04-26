@@ -1,0 +1,8 @@
+services:
+  web:
+    build: .
+    image: green-api-test:local
+    container_name: green-api-test
+    ports:
+      - "8080:80"
+    restart: unless-stopped
