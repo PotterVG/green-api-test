@@ -1,41 +1,49 @@
-# GREEN-API тестовое задание
+# GREEN-API Test Assignment
 
-HTML-страница для интеграции с GREEN-API. Позволяет отправлять сообщения, получать настройки и состояние инстанса через REST API.
+HTML page integrating with GREEN-API. Allows sending messages, fetching settings, and checking instance state via REST API.
 
-## Запуск локально
+## Local development
 
-Для локальной разработки запусти простой HTTP-сервер:
+### Option 1 — Docker Compose (recommended)
+
+```bash
+docker compose up --build
+```
+
+Open http://localhost:8080 in your browser. Stop with `docker compose down`.
+
+### Option 2 — Python HTTP server
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Открой http://localhost:8000 в браузере.
+Open http://localhost:8000 in your browser.
 
-## Деплой
+## Deployment
 
-При push в ветку `main` GitHub Actions автоматически собирает артефакт и публикует страницу на GitHub Pages.
+On push to the `main` branch, GitHub Actions builds an artifact and publishes the page to GitHub Pages automatically.
 
-## Использование
+## Usage
 
-1. Создай инстанс на https://green-api.com/
-2. Отсканируй QR-код и подключи номер телефона
-3. Скопируй `idInstance` и `ApiTokenInstance` из личного кабинета
-4. Вставь значения в форму на странице
-5. Нажми кнопки:
-   - **getSettings** — получить настройки инстанса
-   - **getStateInstance** — проверить статус инстанса
-   - **sendMessage** — отправить текстовое сообщение на номер
-   - **sendFileByUrl** — отправить файл по URL
+1. Create an instance at https://green-api.com/
+2. Scan the QR code and link your phone number
+3. Copy `idInstance` and `ApiTokenInstance` from the dashboard
+4. Paste the values into the form on the page
+5. Click the buttons:
+   - **getSettings** — fetch instance settings
+   - **getStateInstance** — check instance state
+   - **sendMessage** — send a text message to a number
+   - **sendFileByUrl** — send a file by URL
 
-Результаты выводятся в поле "Ответы" справа.
+Results are displayed in the "Response" field on the right.
 
-## Документация
+## Documentation
 
 - [GREEN-API docs](https://green-api.com/docs/api/)
-- [REST API методы](https://green-api.com/docs/api/)
+- [REST API methods](https://green-api.com/docs/api/)
 
-## Требования
+## Requirements
 
-- Современный браузер с поддержкой ES6+
-- Доступ в интернет для вызовов к GREEN-API
+- Modern browser with ES6+ support
+- Internet access for GREEN-API calls
